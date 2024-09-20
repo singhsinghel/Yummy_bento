@@ -1,8 +1,7 @@
 .header{
     height: 34vw;
-    margin-top: 4rem ;
-    background: url('/header_img.png') no-repeat;
-    background-size: contain;
+    margin: 4rem ;
+
     position: relative;
 }
 
@@ -33,6 +32,9 @@
     .header .btn{
         padding: 0.2rem !important;
         font-size: max(1vw,0.8rem);
+    }
+    .header{
+         height: 50vw;
     }
 
 }

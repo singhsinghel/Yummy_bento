@@ -3,7 +3,7 @@ import './footer.css';
 
 const Footer = () => {
   return (
-    <div className='footer d-flex flex-column p-5 w-100 bg-dark text-light d-flex flex-column justify-content-evenly ' id='footer' style={{height:'18rem'}}>
+    <div className='footer d-flex flex-column p-5 w-100 bg-dark text-light d-flex flex-column justify-content-evenly ' id='footer' style={{minHeight:'15rem'}}>
         <div className="footer-content text-light row">
             <div className="footer-content-left col-6">
                 <h2 className='fw-bold fs-1' style={{color:'tomato'}}>YummyBento.</h2>
