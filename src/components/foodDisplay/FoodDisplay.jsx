@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import './FoodDisplay.css'
+import './foodDisplay.css'
 import { StoreContext } from '../../context/Context'
 import FoodItem from '../foodItem/FoodItem'
 
