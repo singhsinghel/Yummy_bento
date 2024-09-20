@@ -5,7 +5,7 @@ const Navbar = () => {
 
   const[menu,setMenu]= useState('menu')
   return (
-    <div className='navbar sticky-top p-4  d-flex justify-content-between align-items-center w-100'>
+    <div className='navbar sticky-top p-4  d-flex justify-content-around align-items-center w-100'>
       <h2 className='h2 logo text-info'>YummyBento</h2>
       <ul className='navbar-menu d-none d-sm-flex list-unstyled gap-3 gap-md-4 fs-4 cursor-pointer'style={{color:'#49557e'}}>
         <li onClick={()=>setMenu('home')} className={menu==='home'?'active':''}>Home</li>

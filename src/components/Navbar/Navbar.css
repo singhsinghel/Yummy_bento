@@ -1,3 +1,4 @@
+
 .navbar .active{
     padding-bottom: 0.12rem ;
     border-bottom: 0.15rem solid #49557e ;
@@ -16,15 +17,12 @@
     background-color: rgb(255, 255, 255) !important;
 }
 @media (max-width:1050px) {
-    .navbar h2{
+    .navbar h1{
         width: 9rem;
     }
     .navbar-menu{
         gap: 1.2rem;
         font-size: 1rem;
-    }
-    .navbar-right{
-        gap: 1.8rem;
     }
     .navbar-right img{
         width: 1.3rem;
@@ -41,14 +39,11 @@
         gap: 1rem !important;
         font-size: 0.75rem !important;
     }
-    .navbar-right{
-        gap: 1.5rem;
-    }
     .navbar-right img{
         width: 1rem !important;
     }
     .navbar-right-button{
+  
         padding: 0.25rem 1.25rem !important;
-        font-size: 0.9rem !important;
     }
 }

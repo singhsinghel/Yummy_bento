@@ -1,14 +1,12 @@
 import React from 'react'
 import './footer.css';
-
 const Footer = () => {
   return (
-    <div className='footer d-flex flex-column p-5 w-100 bg-dark text-light d-flex flex-column justify-content-evenly ' id='footer' style={{minHeight:'15rem'}}>
+    <div className='footer d-flex flex-column p-5 w-100 bg-dark text-light d-flex flex-column justify-content-evenly ' id='footer' style={{minHeight:'18rem'}}>
         <div className="footer-content text-light row">
             <div className="footer-content-left col-6">
                 <h2 className='fw-bold fs-1' style={{color:'tomato'}}>YummyBento.</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae a incidunt doloribus, exercitationem sit praesentium pariatur quis soluta hic distinctio autem iure obcaecati amet ipsum aliquid, consectetur commodi adipisci blanditiis!</p>
-
             </div>
             <div className="footer-content-center col-3">
                 <h3 className=''>Company</h3>
