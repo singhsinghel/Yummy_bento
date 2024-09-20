@@ -5,7 +5,7 @@ import Home from './pages/Home/Home'
 import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/Place-order/PlaceOrder'
 import Footer from './components/footer/Footer'
-import FlexNavbar from './components/FlexNavbar/FlexNavbar'
+
 
 
 const App = () => {
