@@ -1,0 +1,9 @@
+.platforms img{
+    width: max(30vw,120px);
+    max-width: 11rem;
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.05);
+    }
+}

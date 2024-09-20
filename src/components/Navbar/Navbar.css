@@ -1,0 +1,54 @@
+.logo{
+    width:10rem
+}
+.navbar{
+    border-bottom: 2rem solid black !important;
+}
+.navbar .active{
+    padding-bottom: 0.12rem ;
+    border-bottom: 0.15rem solid #49557e ;
+}
+.navbar-search-icon .dot{
+    position: absolute;
+    min-width: 0.65rem;
+    min-height: 0.65rem;
+    background-color: tomato;
+    top:-0.5rem;
+    right: -0.5rem;
+    border-radius: 50%;
+}.navbar{
+    width: 90%;
+    z-index: 10000;
+    background-color: rgb(255, 255, 255) !important;
+}
+@media (max-width:1050px) {
+    .navbar h1{
+        width: 9rem;
+    }
+    .navbar-menu{
+        gap: 1.2rem;
+        font-size: 1rem;
+    }
+    .navbar-right img{
+        width: 1.3rem;
+    }
+    .navbar-right-button{
+        padding: 0.5rem 1.5rem;
+    }
+}
+@media (max-width:900px) {
+    .navbar h2{
+        width: 8rem !important;
+    }
+    .navbar-menu{
+        gap: 1rem !important;
+        font-size: 0.75rem !important;
+    }
+    .navbar-right img{
+        width: 1rem !important;
+    }
+    .navbar-right-button{
+  
+        padding: 0.25rem 1.25rem !important;
+    }
+}

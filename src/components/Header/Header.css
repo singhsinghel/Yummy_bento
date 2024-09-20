@@ -1,0 +1,41 @@
+.header{
+    height: 34vw;
+    margin-top: 4rem ;
+    background: url('/header_img.png') no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.header-contents{
+    position: absolute;
+    bottom: 10%;
+    left:6vw;
+    max-width: 50% !important;
+    animation: fadeIn 3s;
+}
+.header-contents h2{
+    font-size: max(4.5vw,1.5px);
+}
+.header .btn{
+    font-size: max(1vw,1rem);
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (max-width:700px) {
+    .header .btn{
+        padding: 0.2rem !important;
+        font-size: max(1vw,0.8rem);
+    }
+    .header{
+        width: 100%;
+    }
+
+}

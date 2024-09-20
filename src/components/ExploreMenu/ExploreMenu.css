@@ -1,0 +1,9 @@
+.explore-menu-list::-webkit-scrollbar{
+    display: none;
+}
+.explore-menu-list-items .active{
+    border: 0.25rem solid tomato;
+    border-radius: 50%;
+    padding: 0.3rem;
+    transform: scale(0.95);
+}
