@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 
-import './FoodItem.css'
+import './foodItem.css'
 import { assets } from '../../assets/frontend_assets/assets';
 import { StoreContext } from '../../context/Context';
 const FoodItem = ({id,name,price,description,image}) => {
