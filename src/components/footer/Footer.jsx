@@ -1,6 +1,6 @@
 import React from 'react'
 import './footer.css';
-import { assets } from '../../assets/frontend_assets/assets';
+
 const Footer = () => {
   return (
     <div className='footer d-flex flex-column p-5 w-100 bg-dark text-light d-flex flex-column justify-content-evenly ' id='footer' style={{height:'18rem'}}>

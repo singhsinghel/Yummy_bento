@@ -19,6 +19,7 @@ const FoodItem = ({id,name,price,description,image}) => {
         sx={{ height: 140 }}
         image={image}
         title={image}
+        className='image'
       /> 
       {!cartItems[id]? <img className='cursor-pointer add' onClick={()=>addItem(id)} src={assets.add_icon_white} alt="" style={{width:'2rem'}} />
        :<div className='add counter food-item-count p-1  d-flex gap-2 align-items-center bg-light rounded-4'>
