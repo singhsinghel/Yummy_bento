@@ -6,7 +6,6 @@ import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/Place-order/PlaceOrder'
 import Footer from './components/footer/Footer'
 
-
 const App = () => {
   return ( 
     <>
@@ -19,9 +18,7 @@ const App = () => {
       </Routes>
     </div>
     <Footer />
-    </>
-    
+    </> 
   )
 }
-
 export default App

@@ -7,3 +7,16 @@
         transform: scale(1.05);
     }
 }
+/* Adjust font size and gap for smaller screens */
+@media (max-width: 576px) {
+    .text-center {
+      font-size: 1.2rem;
+    }
+    .platforms {
+      gap: 1rem;
+    }
+    .platforms img {
+        width: max(25vw, 100px); /* Reduce size on small screens */
+      }
+  }
+  

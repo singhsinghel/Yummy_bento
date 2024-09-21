@@ -27,6 +27,7 @@
     .navbar-right img{
         width: 1.3rem;
     }
+   
     .navbar-right-button{
         padding: 0.5rem 1.5rem;
     }
@@ -45,5 +46,10 @@
     .navbar-right-button{
   
         padding: 0.25rem 1.25rem !important;
+    }
+}
+@media (max-width:780px) {
+    .navbar-menu{
+        display: none !important;
     }
 }
