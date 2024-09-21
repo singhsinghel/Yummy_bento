@@ -1,9 +1,10 @@
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
-  scroll-behavior: smooth;
+
 }
   body{
     min-width: 100vh;
@@ -13,5 +14,5 @@
     color: inherit;
   }
   .app{
-     width: 95%;
+    width: 80%;
   }

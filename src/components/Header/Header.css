@@ -29,30 +29,13 @@
     }
 }
 
-@media (max-width:1050px) {
+@media (max-width:700px) {
+    .header .btn{
+        padding: 0.2rem !important;
+        font-size: max(1vw,0.8rem);
+    }
     .header{
-        height: 38vw;
+        width: 100%;
     }
-    .header-contents{
-        max-width: 45%;
-    }
-    .header .btn{
-        padding: 0.2rem !important;
-        font-size: max(1vw,0.8rem);
-    }
-}
-@media (max-width:750px) {
-   
-    .header-contents{
-        max-width: 55%;
-    }
-    .header .btn{
-        padding: 0.2rem !important;
-        font-size: max(1vw,0.8rem);
-    }
-    .header-contents p {
-        display: block;
-        font-size: 0.8rem;
-      }
- 
+
 }

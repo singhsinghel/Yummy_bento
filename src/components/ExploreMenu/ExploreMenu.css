@@ -7,20 +7,3 @@
     padding: 0.3rem;
     transform: scale(0.95);
 }
-@media (max-width:1050px) {
-    .explore-menu-text{
-        max-width: 100% !important;
-        font-size: 14px !important;
-    }
-}
-/* Adjust gap and margin for small screens */
-@media (max-width: 576px) {
-    .explore-menu-list {
-      gap: 2rem !important;
-      margin: 0 1rem !important;
-    }
-    .explore-menu-list-items img {
-      width: 6rem !important;
-    }
-  }
-  

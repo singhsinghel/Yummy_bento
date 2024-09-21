@@ -1,23 +1,8 @@
 .footer{
     margin-top: 6rem;
 }
-@media (max-width:950px) {
-    .footer-content{
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-        width: 100% !important;
+@media (max-width:1000px) {
+    p,li{
+        font-size: smaller;
     }
- 
 }
-
-@media (max-width: 576px) {
-    .footer-content {
-      gap: 2rem; /* Reduce the gap for smaller screens */
-    }
-    .footer-content-left,
-    .footer-content-center,
-    .footer-content-right {
-      text-align: center;
-    }
-  }
