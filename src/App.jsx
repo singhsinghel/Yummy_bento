@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './components/responsiveAppbar/Navbar.jsx'
+import Navbar from './components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Cart from './pages/Cart/Cart'
@@ -12,7 +12,11 @@ const App = () => {
     <>
     <div className='app d-flex flex-column justify-content-center  m-auto'>
       <Navbar />
- 
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/cart' element={<Cart/>} />
+        <Route path='/order' element={<PlaceOrder/>} />
+      </Routes>
     </div>
     <Footer />
     </>

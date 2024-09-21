@@ -32,8 +32,10 @@
     }
 }
 @media (max-width:900px) {
-    .navbar h2{
-        width: 8rem !important;
+    .navbar .logo{
+        font-size: larger;
+        width: 7rem !important;
+        color: tomato !important;
     }
     .navbar-menu{
         gap: 1rem !important;
@@ -43,7 +45,7 @@
         width: 1rem !important;
     }
     .navbar-right-button{
-  
+        width: 5rem !important;
         padding: 0.25rem 1.25rem !important;
     }
 }
