@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import {assets} from '../../assets/frontend_assets/assets'
+import Button from '@mui/material/Button';
+import SignIn from '../SignIn/SignIn';
 const Navbar = () => {
-
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
   const[menu,setMenu]= useState('menu')
   return (
+    <>
     <div className='navbar sticky-top px-3 py-2 p-md-3 d-flex justify-content-between align-items-center w-100'>
       <h2 className='h4'><span className='logo'>Yummy</span><span className='text-secondary'>Bento</span></h2>
       <ul className='navbar-menu d-none d-sm-flex align-items-end list-unstyled gap-3 gap-md-4 fs-6 cursor-pointer'style={{color:'#49557e'}}>
@@ -19,9 +23,10 @@ const Navbar = () => {
           <img src={assets.basket_icon} alt="" />
           <div className="dot"> </div>
         </div>
-          <button className='btn btn-sm px-4 rounded-5 navbar-right-button'style={{color:'#49557e'},{border:'1px solid black'}}>signin</button>
+        <SignIn  />
       </div>
     </div>
+    </>
   )
 }
 export default Navbar

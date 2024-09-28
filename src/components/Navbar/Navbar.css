@@ -14,9 +14,7 @@
     right: -0.5rem;
     border-radius: 50%;
 }.navbar{
-    z-index: 10000;
     background-color: rgb(255, 255, 255) !important;
-
 }
 @media (max-width:1050px) {
     .navbar h1{
