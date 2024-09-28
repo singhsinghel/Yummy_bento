@@ -36,7 +36,7 @@ const SignIn = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box className='rounded-4' sx={style}>
+        <Box className='rounded-4 box' sx={style}>
           {inUp === 'signIn' ? (
             <div className="card-body text-center container">
               <div className="h4">
