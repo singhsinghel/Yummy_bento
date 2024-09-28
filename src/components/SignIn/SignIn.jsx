@@ -79,7 +79,7 @@ const SignIn = () => {
                       <b>Forgot Your Password?</b>
                     </small>
                   </p>
-                  <button className="btn text-light w-100 rounded-5" style={{backgroundColor:'tomato'}}>Log in</button>
+                  <button className="btn text-light w-100 rounded-2" style={{backgroundColor:'tomato'}}>Log in</button>
                 </form>
               </div>
               <p className="card-text">
@@ -162,7 +162,7 @@ const SignIn = () => {
                       <div className="invalid-tooltip">Please enter a valid password.</div>
                     </div>
                   </div>
-                  <button className="btn text-light w-100 rounded-5 mt-2"style={{backgroundColor:'tomato'}}>Create account</button>
+                  <button className="btn text-light w-100 rounded-2 mt-2"style={{backgroundColor:'tomato'}}>Create account</button>
                 </form>
               </div>
               <p className="card-text">
