@@ -13,10 +13,10 @@ const FoodItem = ({id,name,price,description,image}) => {
   const{cartItems,setCartItems,addItem,removeItem}=useContext(StoreContext)
   return (
     <div className='food-item mb-2'>
-     <Card sx={{ maxWidth: 240}}>
+     <Card sx={{ maxWidth: 300}}>
       <div className="food-item-img-container position-relative">
       <CardMedia style={{width:'100%'}}
-        sx={{ height: 140 }}
+        sx={{ height: 150 }}
         image={image}
         title={image}
       /> 
