@@ -2,4 +2,7 @@
     .totals{
         width: 100% !important;
     }
+    .cart-img{
+        width: 2rem !important;
+    }
 }

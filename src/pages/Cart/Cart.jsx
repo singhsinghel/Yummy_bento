@@ -8,7 +8,7 @@ const Cart = () => {
   return (
     <div className='container'>
       <div className="cart-items">
-        <div className="cart-items-title row text-center">
+        <div className="cart-items-title row  text-center">
         <p className='col-2'>Items</p>
         <p className='col-2'>Title</p>
         <p className='col-2'>Price</p>
@@ -16,14 +16,13 @@ const Cart = () => {
         <p className='col-2'>Total</p>
         <p className='col-2'>Remove</p>
         </div>
-        <br />
         <hr />
         {food_list.map((item,index)=>{
           if(cartItems[item._id]>0){
             return(
               <div key={index} className='cart-items-title cart-items-item row mt-3 text-center'>
                 <div className="img col-2">
-                  <img style={{width:'4rem'}}  src={item.image} alt="" />
+                  <img className='cart-img rounded-3' style={{width:'4rem'}}  src={item.image} alt="" />
                   </div>
                   <p className='col-2'>{item.name}</p>
                   <p className='col-2'>{item.price}</p>
