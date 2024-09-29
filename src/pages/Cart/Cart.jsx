@@ -4,7 +4,7 @@ import './Cart.css'
 const Cart = () => {
   const {cartItems,food_list,removeItem} = useContext(StoreContext)
   return (
-    <div>
+    <div className='container'>
       <div className="cart-items">
         <div className="cart-items-title row text-center">
         <p className='col-2'>Items</p>
@@ -35,33 +35,33 @@ const Cart = () => {
           }
         })}
         </div>
-        <div className="checkout-coupon d-flex justify-content-between">
-          <div className="totals">
+        <div className="checkout-coupon mt-4 gap-4 d-flex flex-column-reverse flex-md-row justify-content-around">
+          <div className="totals w-50 ">
             <h2>Cart Totals</h2>
-            <div className="subtotal">
+            <div className="subtotal d-flex justify-content-between">
               <p>Subtotal</p>
-              <p>{}</p>
+              <p>{0}</p>
             </div>
             <hr />
-            <div className="deliv-fee">
+            <div className="deliv-fee d-flex justify-content-between">
               <p>Delivery Fee</p>
-              <p>{}</p>
+              <p>{2}</p>
             </div>
             <hr />
-            <div className="total">
+            <div className="total d-flex justify-content-between">
               <p>Total</p>
-              <p>{}</p>
+              <p>{4}</p>
             </div>
             <div style={{backgroundColor:'tomato'}} className="btn text-light">Checkout</div>
           </div>
           <div className="coupon ">
             <p>If you have any promo code, Enter here</p>
             <form action="">
-              <div className="row ">
-                <div className="input col-8 p-0">
-                 <input className=' form-control rounded-start-5' type="text" />
+              <div className="row">
+                <div className="input col-7 p-0">
+                 <input placeholder='promocode' className=' form-control rounded-start-3 rounded-end-0' type="text" />
               </div>
-              <button className="btn btn-dark col-4">Submit</button>
+              <button className="btn btn-dark col-3 rounded-start-0">Submit</button>
               </div>
             </form>
           </div>
