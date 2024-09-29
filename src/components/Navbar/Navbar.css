@@ -1,6 +1,6 @@
 .navbar .active{
     padding-bottom: 0.12rem ;
-    border-bottom: 0.15rem solid #49557e ;
+    border-bottom: 0.15rem solid tomato ;
 }
 .logo{
     color: tomato;
@@ -14,7 +14,7 @@
     right: -0.5rem;
     border-radius: 50%;
 }.navbar{
-    background-color: rgb(255, 255, 255) !important;
+    color: aliceblue !important;
 }
 @media (max-width:1050px) {
     .navbar h1{
@@ -50,4 +50,14 @@
         width: 5rem !important;
         padding: 0.25rem 1.25rem !important;
     }
+}
+
+@media (max-width:700px) {
+    .navbar{
+        background-color: white !important;
+    }
+    .navbar .span,.navbar-menu, .basket ,.search{
+        color: #49557e !important;
+    }
+
 }

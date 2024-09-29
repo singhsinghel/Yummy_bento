@@ -3,6 +3,7 @@ import './signIn.css';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
+import { useLocation } from 'react-router-dom';
 
 const style = {
   position: 'absolute',
@@ -16,6 +17,9 @@ const style = {
 };
 
 const SignIn = () => {
+  const location = useLocation();
+  const currentRoute = location.pathname;
+  const color=currentRoute==='/'?'white':'#49557e';
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -25,7 +29,7 @@ const SignIn = () => {
     <div className='model'>
       <Button
         className='btn btn-sm px-4 rounded-5 navbar-right-button'
-        style={{ color: '#49557e', border: '1px solid black' }}
+        style={{ color: color, border: '1px solid black' }}
         onClick={handleOpen}
       >
         SIGNIN

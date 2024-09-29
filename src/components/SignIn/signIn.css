@@ -1,5 +1,11 @@
-@media (max-width:480px) {
+@media (max-width:700px) {
     .box{
         max-width: 90%;
     }
+    .navbar-right-button{
+        color: #49557e !important;
+    }
+  }
+  .navbar-right-button{
+    border: none !important;
   }

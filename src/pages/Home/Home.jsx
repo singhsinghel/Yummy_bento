@@ -10,6 +10,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+      <div className="cover-img"></div>
       <ExploreMenu category={category} setCategory={setCategory} />
       < FoodDisplay category={category}/>
       <AppDownload />

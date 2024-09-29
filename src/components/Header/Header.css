@@ -1,16 +1,27 @@
 .header{
     height: 34vw;
-    background: url('../../assets/frontend_assets/header_img2.png');
     background-size:cover;
     position: relative;
 }
 
 .header-contents{
     position: absolute;
-    bottom: 10%;
+    z-index: 1000;
+    bottom: 30%;
     left:6vw;
     max-width: 50% !important;
     animation: fadeIn 3s;
+}
+.inp-btn{
+    height: 3rem !important;
+    width: 50rem !important;
+}
+.menu-btn{
+    white-space: nowrap;
+    border-right: 1px solid black;
+}
+.query{
+    outline: none;
 }
 .header-contents h2{
     font-size: max(4.5vw,1.5px);
@@ -28,16 +39,41 @@
     }
 }
 
-@media (max-width:700px) {
+@media (max-width:900px) {
     .header{
         padding: 4rem !important;
+        width: 100%;
     }
     .header .btn{
         padding: 0.2rem !important;
         font-size: max(1vw,0.8rem);
     }
-    .header{
-        width: 100%;
+    .header-contents{
+        bottom: 40%;
+    }
+    .inp-btn{
+        height: 3rem !important;
+        width: 20rem !important;
     }
 
+}
+@media (max-width:700px) {
+    .header{
+        height: 50vw;
+    background: url('../../assets/frontend_assets/header_img2.png');
+    background-size:cover;
+    }
+    .header-contents{
+        bottom: 10%;
+    }
+    .inp-btn{
+        height: 2rem !important;
+        width: 20rem !important;
+    }
+    .query{
+        font-size: small;
+    }
+    .search{
+        display: none;
+    }
 }
