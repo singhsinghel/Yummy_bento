@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import {StoreContext} from '../../context/Context'
 import './Cart.css'
 const Cart = () => {
-  const {cartItems,food_list,removeItem} = useContext(StoreContext)
+  const {cartItems,food_list,removeItem, getTotalCartAmt} = useContext(StoreContext)
   return (
     <div className='container'>
       <div className="cart-items">
@@ -40,17 +40,17 @@ const Cart = () => {
             <h2>Cart Totals</h2>
             <div className="subtotal d-flex justify-content-between">
               <p>Subtotal</p>
-              <p>{0}</p>
+              <p>₹ {getTotalCartAmt()}</p>
             </div>
             <hr />
             <div className="deliv-fee d-flex justify-content-between">
               <p>Delivery Fee</p>
-              <p>{2}</p>
+              <p>₹ {20}</p>
             </div>
             <hr />
             <div className="total d-flex justify-content-between">
               <p>Total</p>
-              <p>{4}</p>
+              <p>₹ {getTotalCartAmt()+20}</p>
             </div>
             <div style={{backgroundColor:'tomato'}} className="btn text-light">Checkout</div>
           </div>

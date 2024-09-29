@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Navbar.css'
 import {assets} from '../../assets/frontend_assets/assets'
-import Button from '@mui/material/Button';
+import {StoreContext} from '../../context/Context'
 import SignIn from '../SignIn/SignIn';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
+  const {getTotalCartAmt} = useContext(StoreContext)
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const[menu,setMenu]= useState('menu')
@@ -22,7 +23,7 @@ const Navbar = () => {
         <img src={assets.search_icon} alt="" />
         <div className="navbar-search-icon position-relative ">
          <Link to='/cart'> <img className='cursor-pointer' src={assets.basket_icon} alt="" /></Link>
-          <div className="dot"> </div>
+          {getTotalCartAmt()>0&& <div className="dot"> </div>}
         </div>
         <SignIn  />
       </div>
