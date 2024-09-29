@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    .name, .city-state, .country-zip{
+      gap: 1rem !important; /* Bootstrap's equivalent of gap-3 */
+    }
+  
+  }
+  .place-order{
+    margin-top: 3rem !important;
+  }
