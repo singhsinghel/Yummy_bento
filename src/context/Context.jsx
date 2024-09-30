@@ -6,6 +6,9 @@ export const StoreContext=createContext(null)
 
 const StoreContextProvider=(props)=>{
     const [cartItems, setCartItems]=useState({});
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     const addItem=(itemId)=>{
         {!cartItems[itemId]
@@ -32,7 +35,10 @@ const StoreContextProvider=(props)=>{
         setCartItems,
         addItem,
         removeItem,
-        getTotalCartAmt
+        getTotalCartAmt,
+        open,
+        handleOpen,
+        handleClose
     } 
     
     return(

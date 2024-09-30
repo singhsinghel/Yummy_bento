@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './signIn.css';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-import { useLocation } from 'react-router-dom';
+import {StoreContext} from '../../context/Context'
+
 
 const style = {
   position: 'absolute',
@@ -17,34 +17,22 @@ const style = {
 };
 
 const SignIn = () => {
-  const location = useLocation();
-  const currentRoute = location.pathname;
-  const color=currentRoute==='/'?'white':'#49557e';
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const {handleClose, open}=useContext(StoreContext);
   const [inUp, setInUp] = useState('signIn');
 
   return (
     <div className='model'>
-      <Button
-        className='btn btn-sm px-4 rounded-5 navbar-right-button'
-        style={{ color: color, border: '1px solid black' }}
-        onClick={handleOpen}
-      >
-        SIGNIN
-      </Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box className='rounded-4 box' sx={style}>
+        <Box className='rounded-4 box' sx={style} >
           {inUp === 'signIn' ? (
             <div className="card-body text-center container">
               <div className="h4">
-                Log in to <br /> see more
+                Log in 
               </div>
               <div className="card-body">
                 <form action="/users/login" method="post" noValidate className="needs-validation">
@@ -104,7 +92,7 @@ const SignIn = () => {
             </div>
           ) : (
             <div className='text-center'>
-              <div className="h4">Sign Up to <br /> dive in</div>
+              <div className="h4">Sign Up </div>
               <div className="card-body">
                 <form action="/users/signup" method="post" noValidate className="needs-validation">
                   <div className="mt-2 position-relative">

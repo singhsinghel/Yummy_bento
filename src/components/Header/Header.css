@@ -6,7 +6,7 @@
 
 .header-contents{
     position: absolute;
-    z-index: 1000;
+    z-index: 1;
     bottom: 30%;
     left:6vw;
     max-width: 50% !important;
