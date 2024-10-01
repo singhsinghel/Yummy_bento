@@ -11,7 +11,7 @@ const ExploreMenu = ({category,setCategory}) => {
             return(
                 <div onClick={()=>setCategory(prev=>prev===item.menu_name?'All':item.menu_name)} key={index} className="explore-menu-list-items cursor-pointer">
                     <img className= {category===item.menu_name?'active rounded-circle ':'All  rounded-circle '} src={item.menu_image} alt="" style={{width:'7.5vw',minWidth:'5rem'}} />
-                    <p className='mt-3 cursor-pointer' style={{color:'#747474'},{fontSize:'max(1.4vw,16px)'}}>{item.menu_name}</p>
+                    <p className='mt-3 cursor-pointer' style={{color:'#747474',fontSize:'max(1.4vw,16px)'}}>{item.menu_name}</p>
                 </div>
             )
         })}
