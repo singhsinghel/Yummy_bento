@@ -7,11 +7,13 @@ import PlaceOrder from './pages/Place-order/PlaceOrder'
 import Footer from './components/footer/Footer'
 import './App.css'
 import SignIn from './components/SignIn/SignIn'
+import Scroll from './components/scrollToTop/Scroll'
 const App = () => {
   return ( 
     <>
     <div className='app d-flex flex-column justify-content-center  m-auto'>
       <Navbar />
+      <Scroll />
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/cart' element={<Cart/>} />
