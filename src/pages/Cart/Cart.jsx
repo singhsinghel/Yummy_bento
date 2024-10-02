@@ -28,7 +28,7 @@ const Cart = () => {
                   <p className='col-2'>{item.name}</p>
                   <p className='col-2'>{item.price}</p>
                   <p className='col-2'>{cartItems[item._id]}</p>
-                  <p className='col-2'>$ {item.price*cartItems[item._id]}</p>
+                  <p className='col-2'>₹ {item.price*cartItems[item._id]}</p>
                   <div className="delete col-2 text-center">
                   <p onClick={()=>removeItem(item._id)} className='text-danger fw-bolder cursor-pointer'>X</p>
                   </div>

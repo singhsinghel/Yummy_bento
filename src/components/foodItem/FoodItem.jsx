@@ -37,7 +37,7 @@ const FoodItem = ({id,name,price,description,image}) => {
           {description}
         </Typography>
         <Typography className='fw-bold mx-3' variant="body2" sx={{ color: 'tomato', fontSize:'1.5rem' }}>
-          ${price}
+        ₹{price}
         </Typography>
 
       </CardContent>
