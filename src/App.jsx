@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
@@ -8,11 +8,16 @@ import Footer from './components/footer/Footer'
 import './App.css'
 import SignIn from './components/SignIn/SignIn'
 import Scroll from './components/scrollToTop/Scroll'
+import Alert from './components/alerts/Alert'
 const App = () => {
+  const [inUp, setInUp] = useState('');
+
+  
   return ( 
     <>
     <div className='app d-flex flex-column justify-content-center  m-auto'>
-      <Navbar />
+      <Navbar setInUp={setInUp} />
+      <Alert />
       <Scroll />
       <Routes>
         <Route path='/' element={<Home/>} />
@@ -20,8 +25,8 @@ const App = () => {
         <Route path='/order' element={<PlaceOrder/>} />
       </Routes>
     </div>
-    <Footer />
-    <SignIn />
+    <Footer  />
+    <SignIn setInUp={setInUp} inUp={inUp} />
     </>
     
   )

@@ -2,23 +2,34 @@ import React, { useContext, useEffect, useState } from 'react';
 import './Navbar.css';
 import { StoreContext } from '../../context/Context';
 import Button from '@mui/material/Button';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
+import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
+import { toast } from 'react-toastify';
 
-const Navbar = () => {
+const Navbar = ({setInUp}) => {
   const isMediumOrLarger = window.matchMedia("(min-width: 768px)").matches;
   
   const location = useLocation();
   const currentRoute = location.pathname;
+
   const position = (currentRoute === '/' && isMediumOrLarger) ? '' : 'sticky-top';
   const color = (currentRoute === '/' && isMediumOrLarger) ? 'white' : '#49557e';
   const bgColor = currentRoute==='/' ? 'transparent' : 'white';
-  const { getTotalCartAmt } = useContext(StoreContext);
-  const {handleOpen}=useContext(StoreContext);
+  const { getTotalCartAmt,token,setToken,handleOpen } = useContext(StoreContext);
   const [menu, setMenu] = useState('menu');
+  const navigate= useNavigate();
+  
 
+  const logout=()=>{
+    localStorage.removeItem('token');
+    setToken('');
+    navigate('/');
+    toast.success('logged out successfully');
+  }
+ 
   useEffect(() => {
-    if (currentRoute==='/'&& isMediumOrLarger) { // Only run the animations on the home page
+    if (currentRoute==='/'&& isMediumOrLarger) { // Only runs the animations on the home page
       const tl = gsap.timeline();
 
       tl.from('.cover-img', {
@@ -77,13 +88,25 @@ const Navbar = () => {
           </Link>
           {getTotalCartAmt() > 0 && <div className="dot"></div>}
         </div>
-        <Button
-        className='btn btn-sm rounded-5 navbar-right-button'
-        style={{ color: color, border: '1px solid black' }}
-        onClick={handleOpen}
-        >
-        SignIn
-      </Button>
+        {token
+        ?    <div className=" dropdown">
+            <a className="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <PersonOutlineRoundedIcon />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a className="dropdown-item" href="#">Orders</a></li>
+          <li><a onClick={logout} className="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
+        : <Button
+          className='btn btn-sm rounded-5 navbar-right-button'
+          style={{ color: color, border: '1px solid black' }}
+         onClick={()=>{handleOpen();setInUp('signIn')}}
+         >
+          SignIn
+         </Button>
+        }
+       
       </div>
     </div>
   );

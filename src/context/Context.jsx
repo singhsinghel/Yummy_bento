@@ -1,24 +1,29 @@
 import { createContext, useEffect, useState } from "react";
-import { food_list } from "../assets/frontend_assets/assets";
-
-
+import axios from "axios";
 export const StoreContext=createContext(null)
 
 const StoreContextProvider=(props)=>{
+    const [food_list,setFoodList]=useState([]);
     const [cartItems, setCartItems]=useState({});
     const [open, setOpen] = useState(false);
+    const url='http://localhost:8080';
+    const [token,setToken]=useState('');
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
+ 
+    //add item in cart
     const addItem=(itemId)=>{
         {!cartItems[itemId]
         ? setCartItems((prev)=>({...prev,[itemId]:1}))
         :setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))}
     };
+
+    //remove item in cart
     const removeItem=(itemId)=>{
       setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
     };
-
+    
+    //getting total cart amount
     const getTotalCartAmt=()=>{
         let totalAmt=0;
         for(const item in cartItems){
@@ -29,6 +34,31 @@ const StoreContextProvider=(props)=>{
         }
         return totalAmt;
     }
+
+    const fetchList=async()=>{
+        const response= await axios.get(`${url}/api/food/list`);
+        if(response.data.success){
+           setFoodList(response.data.data)
+        }
+        else{
+          toast.error(response.data.error);
+        }
+      };
+
+      useEffect(() => {
+        async function  loadData() {
+            console.log('fetching');
+            await fetchList();
+            console.log('fetched');
+            
+            const savedToken = localStorage.getItem('token');
+            if (savedToken) {
+              setToken(savedToken); 
+            }
+        }
+        loadData();
+        },[]);
+
     const contextValue={
         food_list,
         cartItems,
@@ -38,7 +68,10 @@ const StoreContextProvider=(props)=>{
         getTotalCartAmt,
         open,
         handleOpen,
-        handleClose
+        handleClose,
+        url,
+        token,
+        setToken
     } 
     
     return(

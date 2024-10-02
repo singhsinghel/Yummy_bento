@@ -5,7 +5,7 @@ import FoodItem from '../foodItem/FoodItem'
 
 
 const FoodDisplay = ({category}) => {
-    const{food_list}= useContext(StoreContext)
+    const{food_list}= useContext(StoreContext);
   return (
     <div className='food-display' id='food-display'>
       <h1 className='fw-bold' style={{fontSize:'max(2vw,1.5rem)'}}>Top dishes near you</h1>

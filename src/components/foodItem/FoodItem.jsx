@@ -10,14 +10,14 @@ import { assets } from '../../assets/frontend_assets/assets';
 import { StoreContext } from '../../context/Context';
 const FoodItem = ({id,name,price,description,image}) => {
 
-  const{cartItems,setCartItems,addItem,removeItem}=useContext(StoreContext)
+  const{cartItems,setCartItems,addItem,removeItem,url}=useContext(StoreContext)
   return (
     <div className='food-item mb-2'>
-     <Card sx={{ maxWidth: 300}}>
+     <Card sx={{ maxWidth: 300,minWidth:300}}>
       <div className="food-item-img-container position-relative">
       <CardMedia style={{width:'100%'}}
         sx={{ height: 150 }}
-        image={image}
+        image={url+'/images/'+image} 
         title={image}
       /> 
       {!cartItems[id]? <img className='cursor-pointer add' onClick={()=>addItem(id)} src={assets.add_icon_white} alt="" style={{width:'2rem'}} />
