@@ -18,7 +18,7 @@ const style = {
 };
 
 const SignIn = ({inUp,setInUp}) => {
-  const {url,setToken}= useContext(StoreContext);
+  const {url,setToken,loadCartData}= useContext(StoreContext);
   const {handleClose, open}=useContext(StoreContext);
   const[data,setData]=useState({
     name:'',
@@ -36,7 +36,6 @@ const SignIn = ({inUp,setInUp}) => {
   const onLogin=async(e)=>{
      e.preventDefault();
      let newUrl=url;
-     
     if(inUp==='signIn')
       newUrl=`${url}/api/user/login`;
     else if(inUp==='signUp')
@@ -44,11 +43,11 @@ const SignIn = ({inUp,setInUp}) => {
 
      const response= await axios.post(newUrl,data);
      if(response.data.success){
-       
        toast.success(response.data.message);
        setToken(response.data.token);
        localStorage.setItem('token',response.data.token);
        setInUp('')
+       loadCartData(localStorage.getItem('token'));
      }
      else{
       toast.error(response.data.message)

@@ -9,6 +9,7 @@ import './App.css'
 import SignIn from './components/SignIn/SignIn'
 import Scroll from './components/scrollToTop/Scroll'
 import Alert from './components/alerts/Alert'
+import Verify from './pages/Verify/Verify'
 const App = () => {
   const [inUp, setInUp] = useState('');
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/' element={<Home/>} />
         <Route path='/cart' element={<Cart/>} />
         <Route path='/order' element={<PlaceOrder/>} />
+        <Route path='/verify' element={<Verify/>} />
       </Routes>
     </div>
     <Footer  />

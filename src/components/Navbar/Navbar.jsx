@@ -16,7 +16,7 @@ const Navbar = ({setInUp}) => {
   const position = (currentRoute === '/' && isMediumOrLarger) ? '' : 'sticky-top';
   const color = (currentRoute === '/' && isMediumOrLarger) ? 'white' : '#49557e';
   const bgColor = currentRoute==='/' ? 'transparent' : 'white';
-  const { getTotalCartAmt,token,setToken,handleOpen } = useContext(StoreContext);
+  const { getTotalCartAmt,token,setToken,handleOpen,setCartItems} = useContext(StoreContext);
   const [menu, setMenu] = useState('menu');
   const navigate= useNavigate();
   
@@ -95,13 +95,13 @@ const Navbar = ({setInUp}) => {
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
           <li><a className="dropdown-item" href="#">Orders</a></li>
-          <li><a onClick={logout} className="dropdown-item" href="#">Logout</a></li>
+          <li><a onClick={()=>{logout();setCartItems({})}} className="dropdown-item" href="#">Logout</a></li>
         </ul>
       </div>
         : <Button
           className='btn btn-sm rounded-5 navbar-right-button'
           style={{ color: color, border: '1px solid black' }}
-         onClick={()=>{handleOpen();setInUp('signIn')}}
+         onClick={()=>{handleOpen();setInUp('signIn');}}
          >
           SignIn
          </Button>
