@@ -6,7 +6,7 @@ const StoreContextProvider=(props)=>{
     const [food_list,setFoodList]=useState([]);
     const [cartItems, setCartItems]=useState({});
     const [open, setOpen] = useState(false);
-    const url='http://localhost:8080';
+    const url='https://yummy-bento-backend.onrender.com';
     const [token,setToken]=useState('');
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
