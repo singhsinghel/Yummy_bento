@@ -7,11 +7,11 @@ import './orders.css'
 const Orders = () => {
     const {url,token}=useContext(StoreContext)
     const [orders,setOrders]=useState([]);
+    
     const getOrders=async()=>{ 
         let response = await axios.post(url+"/api/order/userorders",{},{headers:{token:token}});
         if(response.data.success){
             setOrders(response.data.data);
-            
         }
     }
     useEffect(()=>{

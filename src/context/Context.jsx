@@ -61,7 +61,7 @@ const StoreContextProvider=(props)=>{
             await fetchList();
             const savedToken = localStorage.getItem('token');
             if (savedToken) {
-              setToken(savedToken); 
+              setToken(savedToken);
               await loadCartData(savedToken);
             }
             else{
@@ -73,6 +73,8 @@ const StoreContextProvider=(props)=>{
 
     const contextValue={
         food_list,
+        setFoodList,
+        fetchList,
         cartItems,
         setCartItems,
         addItem,
