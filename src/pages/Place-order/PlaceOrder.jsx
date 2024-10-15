@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import './PlaceOrder.css'
 import {StoreContext} from '../../context/Context'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const PlaceOrder = () => {
   const {getTotalCartAmt,token,food_list,cartItems,url,toast} = useContext(StoreContext);
   const [data,setData]=useState({
@@ -46,10 +47,17 @@ const PlaceOrder = () => {
       window.location.replace(session_url);
     }
     else{
-    console.log(response.data);
-    
     }
   }
+  //it will run whenever the token is updated
+  const navigate = useNavigate()
+  useEffect(()=>{
+    //if no user then will be redirected to cart
+   if(!token)
+    navigate('/cart')
+  else if(getTotalCartAmt()===0)
+    navigate('/cart')
+  },[token])
   return (
     <div className="place-order mt-4">
   {/* Delivery Information Section */}

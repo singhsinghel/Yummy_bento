@@ -10,6 +10,7 @@ import SignIn from './components/SignIn/SignIn'
 import Scroll from './components/scrollToTop/Scroll'
 import Alert from './components/alerts/Alert'
 import Verify from './pages/Verify/Verify'
+import Orders from './pages/My-orders/Orders'
 const App = () => {
   const [inUp, setInUp] = useState('');
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/cart' element={<Cart/>} />
         <Route path='/order' element={<PlaceOrder/>} />
         <Route path='/verify' element={<Verify/>} />
+        <Route path='/myorders' element={<Orders />} />
       </Routes>
     </div>
     <Footer  />

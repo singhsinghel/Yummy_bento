@@ -93,8 +93,8 @@ const Navbar = ({setInUp}) => {
             <a className="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <PersonOutlineRoundedIcon />
         </a>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a className="dropdown-item" href="#">Orders</a></li>
+        <ul className="dropdown-menu dropdown-menu-end">
+          <li><Link to='/myorders' className="dropdown-item">Orders</Link></li>
           <li><a onClick={()=>{logout();setCartItems({})}} className="dropdown-item" href="#">Logout</a></li>
         </ul>
       </div>
