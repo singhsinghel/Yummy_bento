@@ -5,7 +5,7 @@ import {StoreContext} from '../../context/Context'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const PlaceOrder = () => {
-  const {getTotalCartAmt,token,food_list,cartItems,url,toast} = useContext(StoreContext);
+  const {getTotalCartAmt,token,food_list,cartItems,url,totalAmount} = useContext(StoreContext);
   const [data,setData]=useState({
      firstName:'',
      lastName:'',
@@ -17,6 +17,7 @@ const PlaceOrder = () => {
      country:'',
      phone:''
   });
+
   const onChangeHandle=(event)=>{
      const {name,value}=event.target;
      setData({...data,
@@ -38,15 +39,14 @@ const PlaceOrder = () => {
      let orderData={
       address:data,
       items:orderItems,
-      amount:getTotalCartAmt()+20
+      totalAmount:getTotalCartAmt(),
+      amount:totalAmount+20
      }
-     
+
     let response= await axios.post(url+"/api/order/place",orderData,{headers:{token}});
     if(response.data.success){
       const {session_url}=response.data;
       window.location.replace(session_url);
-    }
-    else{
     }
   }
   //it will run whenever the token is updated
@@ -192,7 +192,7 @@ const PlaceOrder = () => {
 
     <div className="subtotal d-flex justify-content-between">
       <p>Subtotal</p>
-      <p>₹ {getTotalCartAmt()}</p>
+      <p>₹ {totalAmount}</p>
     </div>
     <hr />
 
@@ -204,7 +204,7 @@ const PlaceOrder = () => {
 
     <div className="total d-flex justify-content-between">
       <p>Total</p>
-      <p>₹ {getTotalCartAmt() + 20}</p>
+      <p>₹ {totalAmount+ 20}</p>
     </div>
 
     {/* Proceed to Checkout Button */}

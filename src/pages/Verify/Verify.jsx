@@ -18,7 +18,8 @@ const Verify = () => {
         if(response.data.success){
             //after verification of payment redirect to myOrders
             navigate('/myorders');
-            toast.success(response.data.message)
+            toast.success(response.data.message).then(
+            toast.success("New coupon earned"))
         }
         else{
             navigate('/')

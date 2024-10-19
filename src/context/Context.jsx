@@ -5,8 +5,11 @@ export const StoreContext=createContext(null)
 const StoreContextProvider=(props)=>{
     const [food_list,setFoodList]=useState([]);
     const [cartItems, setCartItems]=useState({});
+    const [totalAmount,setTotalAmount]=useState(0)
     const [open, setOpen] = useState(false);
-    const url='https://yummy-bento-backend.onrender.com';
+    const demo="http://localhost:8080";
+    const productionUrl='https://yummy-bento-backend.onrender.com'
+    const url=productionUrl;
     const [token,setToken]=useState('');
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -27,7 +30,6 @@ const StoreContextProvider=(props)=>{
         await axios.post(url+'/api/cart/remove',{itemId},{headers:{token}})
     }
     };
-    
     //getting total cart amount
     const getTotalCartAmt=()=>{
         let totalAmt=0;
@@ -87,6 +89,8 @@ const StoreContextProvider=(props)=>{
         token,
         setToken,
         loadCartData,
+        totalAmount,
+        setTotalAmount
     } 
     
     return(
