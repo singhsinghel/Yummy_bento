@@ -10,7 +10,7 @@ const Cart = () => {
   const [coupon, setCoupon]=useState([]);
   const [showCoupons,setShowCoupons]=useState(false)
   const [selectedCoupon, setSelectedCoupon] = useState('');
-  const[discount,setDiscount]=useState();
+  const [discount,setDiscount]=useState();
   const inputRef = useRef(null);
   const couponRef = useRef(null);
 
@@ -43,10 +43,12 @@ const Cart = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
   const getDiscount=(event)=>{
     event.preventDefault()
     if(discount){
-     setTotalAmount((discount/100)* getTotalCartAmt())
+     const discountAmount=(discount/100)* getTotalCartAmt()
+     setTotalAmount(getTotalCartAmt()-discountAmount)
     }
   }
   return (
@@ -88,7 +90,7 @@ const Cart = () => {
               <p>₹ {getTotalCartAmt()}</p>
             </div>
             <hr />
-            {totalAmount &&(
+            {totalAmount!==0 &&(
               <div>
               <div className="discount d-flex justify-content-between">
                <p>Coupon Discount</p>

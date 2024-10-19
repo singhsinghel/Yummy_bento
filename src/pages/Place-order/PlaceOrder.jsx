@@ -24,7 +24,7 @@ const PlaceOrder = () => {
       [name]:value
      })
   };
-  const placeOrder=async(event)=>{
+  const placeorder=async(event)=>{
      event.preventDefault();
      let orderItems=[];
      
@@ -40,7 +40,7 @@ const PlaceOrder = () => {
       address:data,
       items:orderItems,
       totalAmount:getTotalCartAmt(),
-      amount:totalAmount+20
+      amount:totalAmount+20,
      }
 
     let response= await axios.post(url+"/api/order/place",orderData,{headers:{token}});
@@ -61,7 +61,7 @@ const PlaceOrder = () => {
   return (
     <div className="place-order mt-4">
   {/* Delivery Information Section */}
-    <form onSubmit={placeOrder}>
+    <form onSubmit={placeorder}>
       <div className="placing-order row gap-5">
        <div className="del-info col-md-6">
     <h2>Delivery Information</h2>

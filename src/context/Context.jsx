@@ -9,7 +9,7 @@ const StoreContextProvider=(props)=>{
     const [open, setOpen] = useState(false);
     const demo="http://localhost:8080";
     const productionUrl='https://yummy-bento-backend.onrender.com'
-    const url=productionUrl;
+    const url=demo;
     const [token,setToken]=useState('');
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
