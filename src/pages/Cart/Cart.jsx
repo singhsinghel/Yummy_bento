@@ -7,21 +7,22 @@ const Cart = () => {
   const {url}=useContext(StoreContext)
   const navigate=useNavigate();
   const {cartItems,food_list,removeItem, getTotalCartAmt,token,totalAmount,setTotalAmount} = useContext(StoreContext);
-  const [coupon, setCoupon]=useState([]);
+  const [coupons, setCoupons]=useState([]);
   const [showCoupons,setShowCoupons]=useState(false)
   const [selectedCoupon, setSelectedCoupon] = useState('');
   const [discount,setDiscount]=useState();
+
   const inputRef = useRef(null);
   const couponRef = useRef(null);
 
-  const getCodes=async(event)=>{
+  const getCodes=async()=>{
      let response= await axios.post(url+'/api/order/discount',{},{headers:{token}});
      if(response.data.success){
-        setCoupon(response.data.data);
+        setCoupons(response.data.data);
      }
   }
-  const handleInputClick = () => {
-    getCodes()
+  const handleInputClick =async () => {
+    await getCodes()
     setShowCoupons(true);
   };
   
@@ -30,7 +31,6 @@ const Cart = () => {
     setShowCoupons(false); 
     setDiscount(item.discount)
   };
-
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -92,9 +92,9 @@ const Cart = () => {
             <hr />
             {totalAmount!==0 &&(
               <div>
-              <div className="discount d-flex justify-content-between">
-               <p>Coupon Discount</p>
-               <p className='text-success'>₹ {getTotalCartAmt()-totalAmount}</p>
+              <div className="discount d-flex justify-content-between cursor-pointer">
+               <p onClick={()=>{setTotalAmount(0)}}>Coupon Discount</p>
+               <p className='text-success'>₹ {parseInt(getTotalCartAmt()-totalAmount)}</p>
             </div>
             <hr />
             </div>
@@ -107,7 +107,7 @@ const Cart = () => {
             <hr />
             <div className="total d-flex justify-content-between">
               <p>Total</p>
-              <p className='fw-semibold'>₹ {!totalAmount?getTotalCartAmt()+20:totalAmount+20}</p>
+              <p className='fw-semibold'>₹ {!totalAmount?parseInt(getTotalCartAmt()+20):parseInt(totalAmount+20)}</p>
             </div>
             <div onClick={()=>{navigate('/order')}} style={{backgroundColor:'tomato'}} className="btn text-light">PROCEED TO CHECKOUT</div>
           </div>
@@ -127,19 +127,19 @@ const Cart = () => {
                  readOnly
                 />
                 {showCoupons&&(
-                  coupon?
+                  coupons.length>0?
                       <div 
                       className="coupon-codes position-absolute" 
                       ref={couponRef}>
                         <ul>
-                          {coupon.map((item,index) => (
+                          {coupons.map((item,index) => (
                             <li className='cursor-pointer fw-light' key={index} onClick={() => handleCouponClick(item)}>{item.name}</li>
                           ))}
                         </ul>
                        </div>
                        :
                        <div className="no-coupon">
-                        <h4>No coupons available</h4>
+                        <p>No coupons available</p>
                        </div>
                      )}
               </div>
