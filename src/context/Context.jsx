@@ -5,7 +5,8 @@ export const StoreContext=createContext(null)
 const StoreContextProvider=(props)=>{
     const [food_list,setFoodList]=useState([]);
     const [cartItems, setCartItems]=useState({});
-    const [totalAmount,setTotalAmount]=useState(0)
+    const [totalAmount,setTotalAmount]=useState(0);
+    const[selectedCouponCode, setSelectedCouponCode]=useState('');
     const [open, setOpen] = useState(false);
     const demo="http://localhost:8080";
     const productionUrl='https://yummy-bento-backend.onrender.com'
@@ -90,7 +91,9 @@ const StoreContextProvider=(props)=>{
         setToken,
         loadCartData,
         totalAmount,
-        setTotalAmount
+        setTotalAmount,
+        selectedCouponCode,
+        setSelectedCouponCode
     } 
     
     return(

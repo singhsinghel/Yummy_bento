@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom'
 const Cart = () => {
   const {url}=useContext(StoreContext)
   const navigate=useNavigate();
-  const {cartItems,food_list,removeItem, getTotalCartAmt,token,totalAmount,setTotalAmount} = useContext(StoreContext);
+  const {cartItems,food_list,removeItem, getTotalCartAmt,token,totalAmount,setTotalAmount,selectedCouponCode,setSelectedCouponCode} = useContext(StoreContext);
   const [coupons, setCoupons]=useState([]);
   const [showCoupons,setShowCoupons]=useState(false)
   const [selectedCoupon, setSelectedCoupon] = useState('');
@@ -29,7 +29,9 @@ const Cart = () => {
   const handleCouponClick = (item) => {
     setSelectedCoupon(item.name);
     setShowCoupons(false); 
-    setDiscount(item.discount)
+    setDiscount(item.discount);
+    //for sending to backend
+    setSelectedCouponCode(item._id);
   };
 
   useEffect(() => {
@@ -48,7 +50,7 @@ const Cart = () => {
     event.preventDefault()
     if(discount){
      const discountAmount=(discount/100)* getTotalCartAmt()
-     setTotalAmount(getTotalCartAmt()-discountAmount)
+     setTotalAmount(getTotalCartAmt()-discountAmount);     
     }
   }
   return (
@@ -111,6 +113,8 @@ const Cart = () => {
             </div>
             <div onClick={()=>{navigate('/order')}} style={{backgroundColor:'tomato'}} className="btn text-light">PROCEED TO CHECKOUT</div>
           </div>
+
+
           <div className="coupon">
             <p>If you have any promo code, Enter here</p>
             <form onSubmit={getDiscount}>

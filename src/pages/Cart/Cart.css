@@ -11,9 +11,12 @@
     border: 1px solid rgba(128, 128, 128, 0.337);
     border-radius: 0rem 0rem 1rem 1rem;
     width: 100%;
-    padding: 0.4rem;
     font-size: large;
 }
 .coupon-codes li{
     list-style: none;
+    margin-top: 1rem;
+}
+.coupon-codes li:hover{
+    font-weight: 400 !important
 }
