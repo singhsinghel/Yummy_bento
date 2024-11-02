@@ -40,7 +40,7 @@ const SignIn = ({inUp,setInUp}) => {
       newUrl=`${url}/api/user/login`;
     else if(inUp==='signUp')
       newUrl=`${url}/api/user/register`;
-
+    
      const response= await axios.post(newUrl,data);
      if(response.data.success){
        toast.success(response.data.message);
