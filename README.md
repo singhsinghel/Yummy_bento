@@ -12,27 +12,30 @@ Welcome to **Yummy Bento**! This is a food ordering platform designed to streaml
 
 ## ⚙️ Technologies Used
 
-- **Frontend**: React, TypeScript, HTML, CSS
+- **Frontend**: React, JavaScript, HTML, CSS, Bootstarp
 - **Backend**: Node.js, Express
 - **Database**: MongoDB
 - **Payment Processing**: Stripe
-- **Deployment**: Render (or your preferred hosting service)
+- **Deployment**: Render
 
 ## 🖼️ Screenshots
 
-![Home Page]()
+![Home Page](src/assets/frontend_assets/hoome.png)
 *Home page showcasing the available food items.*
 
-![Explore Items/Categories](path/to/your/explore-screenshot.png)
+![Explore Items/Categories](src/assets/frontend_assets/category.png)
 *Explore items and categories for easy navigation.*
 
-![Cart with Promo Code](path/to/your/cart-screenshot.png)
+![Cart with Promo Code](src/assets/frontend_assets/cart.png)
 *Cart view where users can apply promo codes.*
 
-![Payment](path/to/your/payment-screenshot.png)
+![Delivery options](src/assets/frontend_assets/delivery-options.png)
+*Deliery options for contact and address.*
+
+![Payment](src/assets/frontend_assets/payment.png)
 *Payment interface powered by Stripe for seamless transactions.*
 
-![Order Status](path/to/your/order-status-screenshot.png)
+![Order Status](src/assets/frontend_assets/orders.png)
 *Orders page displaying all added orders and their current status.*
 
 ## 🕹️ How to Use
