@@ -137,7 +137,7 @@ const Cart = () => {
                   ₹ {parseInt(getTotalCartAmt() - totalAmount)}
                 </p>
               </div>
-              <hr />
+              {getTotalCartAmt() !== 0 && <hr />}
             </div>
           )}
           {getTotalCartAmt() !== 0 && (
