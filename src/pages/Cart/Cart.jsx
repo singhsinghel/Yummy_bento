@@ -140,7 +140,7 @@ const Cart = () => {
               <hr />
             </div>
           )}
-          {getTotalCartAmt !== 0 && (
+          {getTotalCartAmt() !== 0 && (
             <div className="deliv-fee d-flex justify-content-between">
               <p>Delivery Fee</p>
               <p>₹ {20}</p>
@@ -152,8 +152,8 @@ const Cart = () => {
             <p className="fw-semibold">
               ₹{" "}
               {!totalAmount
-                ? parseInt(getTotalCartAmt() + getTotalCartAmt ? 20 : 0)
-                : parseInt(totalAmount + getTotalCartAmt ? 20 : 0)}
+                ? parseInt(getTotalCartAmt() + getTotalCartAmt() ? 20 : 0)
+                : parseInt(totalAmount + getTotalCartAmt() ? 20 : 0)}
             </p>
           </div>
           <div
